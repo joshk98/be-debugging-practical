@@ -29,4 +29,10 @@ app.delete("/pokemon", (_, res) => {
   res.status(204);
 });
 
+// debug 6
+app.patch("/greeting/:forename/:surname", (req, res) => {
+  const { forename, surname, age }  = req.params;
+  res.status(200).json(`Happy ${age}th birthday, ${forename} ${surname}!`);
+})
+
 module.exports = app;

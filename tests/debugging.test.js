@@ -32,9 +32,18 @@ describe("debugging", () => {
     expect(body).to.equal("Catch them all!");
   });
 
-  it("debug 5", async () => {
+  xit("debug 5", async () => {
     const { status } = await request(app).delete("/pokemon").send();
 
     expect(status).to.equal(204);
+  });
+
+  it("debug 6", async () => {
+    const { status, body } = await request(app)
+      .patch("/greeting/Bilbo/Baggins")
+      .send({ age: 111});
+
+    expect(status).to.equal(200);
+    expect(body).to.equal("Happy 111th birthday, Bilbo Baggins!");
   });
 });
