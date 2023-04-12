@@ -24,4 +24,9 @@ app.get("/pokemon", (_, res) => {
   res.sendStatus(200).json("Catch them all!");
 });
 
+// debug 5
+app.delete("/pokemon", (_, res) => {
+  res.status(204);
+});
+
 module.exports = app;
