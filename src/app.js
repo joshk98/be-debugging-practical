@@ -11,12 +11,12 @@ app.get("/helloworld", (_, res) => {
 
 // debug 2
 app.get("/goodbye", (_, res) => {
-  res.sendStatus(200);
+  res.sendStatus(204);
 });
 
-// debug 3
-app.post("/pokemon", (req, res) => {
-  res.status(201).json(req.body);
+// debug 3(a) and 3(b)
+app.post("/pokemon", (_, res) => {
+  res.status(200).json("Pikachu");
 });
 
 // debug 4

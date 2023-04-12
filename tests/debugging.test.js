@@ -16,13 +16,22 @@ describe("debugging", () => {
     expect(status).to.equal(204);
   });
 
-  xit("debug 3", async () => {
+  xit("debug 3(a)", async () => {
     const { status, body } = await request(app)
       .post("/pokemon")
       .send({ pokemon: "Pikachu" });
 
     expect(status).to.equal(201);
     expect(body).to.equal("Pikachu");
+  });
+
+  xit("debug 3(b)", async () => {
+    const { status, body } = await request(app)
+      .post("/pokemon")
+      .send({ pokemon: "Squirtle" });
+
+    expect(status).to.equal(201);
+    expect(body).to.equal("Squirtle");
   });
 
   xit("debug 4", async () => {
@@ -38,7 +47,7 @@ describe("debugging", () => {
     expect(status).to.equal(204);
   });
 
-  it("debug 6", async () => {
+  xit("debug 6", async () => {
     const { status, body } = await request(app)
       .patch("/greeting/Bilbo/Baggins")
       .send({ age: 111});
