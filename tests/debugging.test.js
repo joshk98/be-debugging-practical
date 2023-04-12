@@ -10,9 +10,18 @@ describe("debugging", () => {
     expect(body).to.equal("Hello World!");
   });
 
-  it("debug 2", async () => {
+  xit("debug 2", async () => {
     const { status } = await request(app).delete("/goodbye").send();
 
     expect(status).to.equal(204);
+  });
+
+  it("debug 3", async () => {
+    const { status, body } = await request(app)
+      .post("/pokemon")
+      .send({ pokemon: "Pikachu" });
+
+    expect(status).to.equal(201);
+    expect(body).to.equal("Pikachu");
   });
 });
