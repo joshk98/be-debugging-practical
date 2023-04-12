@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prestart": "node scripts/create-database.js",
     "start": "nodemon index.js",
     "test": "mocha tests/**/*.js --exit --recursive --timeout 60000",
     "lint": "eslint ."
