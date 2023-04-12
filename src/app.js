@@ -19,4 +19,9 @@ app.post("/pokemon", (req, res) => {
   res.status(201).json(req.body);
 });
 
+// debug 4
+app.get("/pokemon", (_, res) => {
+  res.sendStatus(200).json("Catch them all!");
+});
+
 module.exports = app;
