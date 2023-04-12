@@ -9,4 +9,9 @@ app.get("/helloworld", (_, res) => {
   res.status(200).json("Hello World");
 });
 
+// debug 2
+app.get("/goodbye", (_, res) => {
+    res.sendStatus(200);
+  });
+
 module.exports = app;
