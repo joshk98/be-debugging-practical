@@ -50,9 +50,36 @@ describe("debugging", () => {
   xit("debug 6", async () => {
     const { status, body } = await request(app)
       .patch("/greeting/Bilbo/Baggins")
-      .send({ age: 111});
+      .send({ age: 111 });
 
     expect(status).to.equal(200);
     expect(body).to.equal("Happy 111th birthday, Bilbo Baggins!");
+  });
+
+  xit("debug 7", async () => {
+    const { status } = await request(app).get("/albums");
+    expect(status).to.equal(200);
+  });
+
+  xit("debug 8", async () => {
+    const { status } = await request(app).get("/login");
+    expect(status).to.equal(200);
+    expect(body).to.equal(`Welcome ${username}`);
+  });
+
+  xit("debug 9", async () => {
+    const { status, body } = await request(app).get("/users");
+    expect(status).toEqual(200);
+    expect(body).toBe("array");
+  });
+
+  xit("debug 10", async () => {
+    const { status, body } = await request(app).get("/books");
+    expect(status).to.equal(201);
+    expect(body).to.be.an("array");
+    expect(body).to.have.length.greaterThan(3);
+    expect(body[0]).to.have.property("id");
+    expect(body[0]).to.have.property("title");
+    expect(body[0]).to.have.property("author");
   });
 });
