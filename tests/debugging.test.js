@@ -57,26 +57,35 @@ describe("debugging", () => {
   });
 
   xit("debug 7", async () => {
+    const { status, body } = await request(app)
+      .get("/pokemon/choose?name=Pikachu")
+      .send();
+
+    expect(status).to.equal(200);
+    expect(body).to.equal("Pikachu, I choose you!");
+  });
+
+  xit("debug 8", async () => {
     const { status } = await request(app).get("/albums");
 
     expect(status).to.equal(200);
   });
 
-  xit("debug 8", async () => {
+  xit("debug 9", async () => {
     const { status } = await request(app).get("/login");
 
     expect(status).to.equal(200);
     expect(body).to.equal(`Welcome ${username}`);
   });
 
-  xit("debug 9", async () => {
+  xit("debug 10", async () => {
     const { status, body } = await request(app).get("/users");
 
     expect(status).toEqual(200);
     expect(body).toBe("array");
   });
 
-  xit("debug 10", async () => {
+  xit("debug 11", async () => {
     const { status, body } = await request(app).get("/books");
 
     expect(status).to.equal(201);

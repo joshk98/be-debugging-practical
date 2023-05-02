@@ -38,19 +38,26 @@ app.patch("/greeting/:forename/:surname", (req, res) => {
 });
 
 // debug 7
+app.get("/pokemon/choose", (req, res) => {
+  const { name } = req.params;
+
+  res.status(200).json(`${name}, I choose you!`);
+});
+
+// debug 8
 app.get("albums", (_, res) => {
   res.status(200).json("Albums");
 });
 
 // The following tasks could have errors in the test as well in the code below.
 
-// debug 8
+// debug 9
 app.get("/login", (req, res) => {
   const { username } = req.params;
   res.status(200).json(`Welcome ${username}`);
 });
 
-// debug 9
+// debug 10
 app.get("/users", (_, res) => {
   const users = [
     { id: 1, name: "Alice", age: 20 },
@@ -60,7 +67,7 @@ app.get("/users", (_, res) => {
   res.status(200).json(users);
 });
 
-// debug 10
+// debug 11
 app.get("/books", (_, res) => {
   res.status(201).json([
     { id: 1, title: "Book A", author: "Author A" },
